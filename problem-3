@@ -1,0 +1,17 @@
+import math   # This will import math module
+
+n = 600851475143
+x = math.sqrt(n)
+i = 2
+y = 1
+list=[]
+
+while i < x:
+    if n % i == 0:
+        list.append(i)
+        y = y * i
+        if y == n:
+            break
+    i +=1
+
+print('The largest prime factor of the number 600851475143 is',list[-1])
