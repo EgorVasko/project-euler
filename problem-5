@@ -1,0 +1,18 @@
+def myfunc():
+    n = 0
+    x = 2520
+    while True:
+        n = 0
+        for i in range (11, 21):
+            if x % i == 0:
+                n = n + 1
+                if n == 9:
+                    return x
+                    break
+            else: break
+        x = x + 10
+        if n == 9:
+            break
+
+a = myfunc()
+print('Done, your number is:',a)
