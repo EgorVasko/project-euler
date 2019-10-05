@@ -1,0 +1,12 @@
+sqsum = 0
+
+for i in range(1,101):
+    sqsum = sqsum + i
+sqsum = sqsum ** 2
+
+sumsq = 0
+
+for i in range(1,101):
+    sumsq = sumsq + (i ** 2)
+
+print(sqsum - sumsq)
