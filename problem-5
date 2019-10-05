@@ -16,3 +16,16 @@ def myfunc():
 
 a = myfunc()
 print('Done, your number is:',a)
+
+
+z = 1
+list = []
+
+for x in range(1,21):
+    for i in list:
+        if x % i == 0:
+            x = x // i
+    list.append(x)
+    z = z * x
+
+print(z)
