@@ -1,0 +1,13 @@
+def prime(n):
+    numbers = set(range(n, 1, -1))
+    primes = []
+    x = 0
+    while numbers: #and len(primes) <10001:
+        p = numbers.pop()
+        primes.append(p)
+        numbers.difference_update(set(range(p*2, n+1, p)))
+    for i in primes:
+        x = x + i
+    return x
+
+print(prime(2000000))
