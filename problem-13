@@ -1,0 +1,11 @@
+# Let's put our big file in a separate file
+
+file = open('big.txt', 'r')
+total = 0
+
+for line in file:
+    line = int(line)
+    total += line
+
+total = str(total)
+print(total[:10])
