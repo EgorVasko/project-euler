@@ -1,4 +1,4 @@
-# Let's put our big file in a separate file
+# Let's put our big number in a separate file
 
 file = open('big.txt', 'r')
 total = 0
