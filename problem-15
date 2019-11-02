@@ -1,0 +1,4 @@
+import math
+def central_binomals(n):
+    return (math.factorial(2*n))/(math.factorial(n))**2
+print(int(central_binomals(20)))
