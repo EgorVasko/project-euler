@@ -1,0 +1,10 @@
+def prob16(x,y):
+    z = str(pow(x,y))
+    sum = 0
+    for i in z:
+        sum += int(i)
+    return sum
+
+print(prob16(2,1000))
+
+print(sum(map(int,list(str(2**1000)))))
