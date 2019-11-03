@@ -1,0 +1,20 @@
+def NumberLetterCounts ():
+    result = 0
+    digit_1 = ['','one','two','three','four','five','six','seven','eight','nine']
+    digit_2 = ['','ten','twenty','thrity','forty','fifty','sixty','seventy','eighty','ninety']
+    digit_exception = ['ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen']
+    for i in digit_1:
+        if i == '':
+            pass
+        else:
+            result += (len(i)+len("hundred"))*100+len("and")*99
+        for j in digit_2:
+            if j == 'ten':
+                for k in digit_exception:
+                    result += len(k)
+            else:
+                result += len(j)*10
+                for k in digit_1:
+                    result += len(k)
+    return result+len('onethousand')
+print(NumberLetterCounts())
