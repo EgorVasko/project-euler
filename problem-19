@@ -1,0 +1,58 @@
+x = 0
+counter = 0
+year_start = 1901
+year_finish = 2000
+
+day = 2  # 1 - monday, 2 - tuesday ... 7 - sunday === 1 Jan 1901 => tuesday(2) ; 31 Dec 2000 => sunday
+
+jan = 31
+feb = 28
+mar = 31
+apr = 30
+may = 31
+jun = 30
+jul = 31
+aug = 31
+sep = 30
+oct = 31
+nov = 30
+dec = 31
+
+months = [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
+
+
+def febr(year):
+    if year % 4 == 0:
+        return 29
+    else:
+        return 28
+
+
+def lastday(x):  # last day of the month:
+    if x == 1:
+        return 7  # sunday
+    elif x == 2:
+        return 1  # "monday"
+    elif x == 3:
+        return 2  # "tuesday"
+    elif x == 4:
+        return 3  # "wednesday"
+    elif x == 5:
+        return 4  # "thursday"
+    elif x == 6:
+        return 5  # "friday"
+    elif x == 0:
+        return 6  # "saturday"
+
+
+for i in range(year_start, year_finish + 1):
+    year = i
+    feb = febr(year)
+    for month in months:
+        x = (day + month + 1) % 7      # next month, first day
+        day = lastday(x)
+        if day == 7:
+            counter += 1
+            continue
+
+print(counter,"Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)")
