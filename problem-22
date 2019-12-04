@@ -1,0 +1,26 @@
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+list = []
+
+
+with open("p022_names.txt") as file:
+    data = file.read()
+
+data = data.split(',')
+
+for i in range(len(data)):
+    data[i] = data[i].strip('"')
+
+data.sort()
+
+for i in range(len(data)):
+    z = 0
+    number = i + 1
+    for x in data[i]:
+        for a in range(len(alphabet)):
+            if x.lower() == alphabet[a]:
+                z = z + (a+1)
+    z = z * number
+    list.append(z)
+
+total = sum(list)
+print(total)
