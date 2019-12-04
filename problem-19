@@ -56,3 +56,13 @@ for i in range(year_start, year_finish + 1):
             continue
 
 print(counter,"Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)")
+
+#Using datetime:
+
+import datetime
+counter = 0
+for year in range(1901, 2000+1):    
+    for month in range(1,12+1):        
+        if datetime.date(year,month,1).isoweekday() == 7:  
+        counter +=1
+print(counter)
